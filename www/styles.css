@@ -1,0 +1,98 @@
+:root {
+  --correct: #2e7d4f;
+  --correct-bg: #e8f4ec;
+  --wrong: #b3261e;
+  --wrong-bg: #fbeaea;
+  --blank: #b7791f;
+  --blank-bg: #fdf4e3;
+  --border: #dee2e6;
+}
+
+/* Question cards ---------------------------------------------------------- */
+
+.question-card {
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--bs-primary);
+  transition: box-shadow 0.3s;
+}
+.question-card.is-correct { border-left-color: var(--correct); }
+.question-card.is-wrong   { border-left-color: var(--wrong); }
+.question-card.is-blank   { border-left-color: var(--blank); }
+.question-card.is-highlighted { box-shadow: 0 0 0 3px rgba(44, 93, 143, 0.35); }
+
+.question-meta {
+  font-size: 0.8rem;
+  color: var(--bs-secondary-color);
+  margin-bottom: 0.25rem;
+}
+.question-text {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.options { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+.option:hover { background: var(--bs-tertiary-bg); }
+.option input { margin-top: 0.3rem; }
+.option-letter { font-weight: 600; min-width: 1.2rem; }
+
+.option-correct { border-color: var(--correct); background: var(--correct-bg); }
+.option-wrong   { border-color: var(--wrong);   background: var(--wrong-bg); }
+.option:has(input:disabled) { cursor: default; }
+.option:has(input:disabled):hover { background: inherit; }
+.option-correct:has(input:disabled):hover { background: var(--correct-bg); }
+.option-wrong:has(input:disabled):hover   { background: var(--wrong-bg); }
+
+/* Results ------------------------------------------------------------------ */
+
+.summary-card { margin-bottom: 1.5rem; }
+.grid-hint { font-size: 0.85rem; color: var(--bs-secondary-color); margin: 0.5rem 0; }
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.grid-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: white;
+  overflow: hidden;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.grid-cell:hover { border-color: var(--bs-primary); }
+.cell-number { padding: 2px 0; font-weight: 600; }
+.cell-letter { width: 100%; padding: 1px 0; color: white; font-weight: 600; }
+.grid-cell.is-correct .cell-letter { background: var(--correct); }
+.grid-cell.is-wrong   .cell-letter { background: var(--wrong); }
+.grid-cell.is-blank   .cell-letter { background: var(--blank); }
+
+/* Pager -------------------------------------------------------------------- */
+
+.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+  font-size: 0.9rem;
+}
+
+.summary-card .bslib-value-box { border: 1px solid var(--border); }
+.summary-card .value-box-area { padding: 0.75rem 1rem; }
