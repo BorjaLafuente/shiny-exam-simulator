@@ -4,7 +4,7 @@ A Shiny app for practising multiple-choice exams from any question bank stored i
 
 I originally built it to help a friend prepare for a civil-service exam in Spain, where candidates train with banks of thousands of questions and wrong answers carry a penalty. This version is generic: it ships with a small demo bank of statistics questions, and you can upload your own spreadsheet.
 
-**Live demo:** _coming soon (shinyapps.io)_
+**Live demo:** https://borjalafuente.shinyapps.io/shiny-exam-simulator/
 
 ![Exam in progress](docs/screenshot-exam.png)
 
